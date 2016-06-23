@@ -8,6 +8,7 @@ filetype plugin indent on
 
 " enable syntax hightlight and completion
 syntax on
+let mapleader=","
 
 "--------
 " Vim UI
@@ -34,11 +35,12 @@ set nofoldenable                                                  " disable fold
 set confirm                                                       " prompt when existing from an unsaved file
 set backspace=indent,eol,start                                    " More powerful backspacing
 set t_Co=256                                                      " Explicitly tell vim that the terminal has 256 colors "
-set mouse=a                                                       " use mouse in all modes
+" set mouse=a                                                       " use mouse in all modes
 set report=0                                                      " always report number of lines changed                "
 set nowrap                                                        " dont wrap lines
 set scrolloff=5                                                   " 5 lines above/below cursor when scrolling
 set number                                                        " show line numbers
+set hlsearch
 set showmatch                                                     " show matching bracket (briefly jump)
 set showcmd                                                       " show typed command in status bar
 set title                                                         " show file in titlebar
@@ -100,11 +102,7 @@ autocmd Syntax lisp,scheme,clojure,racket RainbowParenthesesToggle
 " tabbar
 let g:Tb_MaxSize = 2
 let g:Tb_TabWrap = 1
-
-hi Tb_Normal guifg=white ctermfg=white
-hi Tb_Changed guifg=green ctermfg=green
-hi Tb_VisibleNormal ctermbg=252 ctermfg=235
-hi Tb_VisibleChanged guifg=green ctermbg=252 ctermfg=white
+map <leader-1> alt-1
 
 " easy-motion
 let g:EasyMotion_leader_key = '<Leader>'
@@ -198,13 +196,13 @@ let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 " Keybindings for plugin toggle
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
-nmap <F5> :TagbarToggle<cr>
-nmap <F6> :NERDTreeToggle<cr>
+nmap <leader>t :TagbarToggle<cr>
+nmap <leader>f :NERDTreeToggle<cr>
 nmap <F3> :GundoToggle<cr>
 nmap <F4> :IndentGuidesToggle<cr>
-nmap  <D-/> :
 nnoremap <leader>a :Ack
 nnoremap <leader>v V`]
+nmap <leader>q :q<cr>
 
 "------------------
 " Useful Functions
