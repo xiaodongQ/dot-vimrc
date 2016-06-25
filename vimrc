@@ -1,7 +1,8 @@
 source ~/.vim/bundles.vim
 
 " encoding dectection
-set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
+" set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
+set fileencodings=ucs-bom,utf-8,gb2312,cp936,gb18030,gbk,latin1
 
 " enable filetype dectection and ft specific plugin/indent
 filetype plugin indent on
@@ -31,22 +32,22 @@ set smartcase
 " editor settings
 set history=1000
 set nocompatible
-set nofoldenable                                                  " disable folding"
-set confirm                                                       " prompt when existing from an unsaved file
-set backspace=indent,eol,start                                    " More powerful backspacing
-set t_Co=256                                                      " Explicitly tell vim that the terminal has 256 colors "
-" set mouse=a                                                       " use mouse in all modes
-set report=0                                                      " always report number of lines changed                "
-set nowrap                                                        " dont wrap lines
-set scrolloff=5                                                   " 5 lines above/below cursor when scrolling
-set number                                                        " show line numbers
+set nofoldenable                      " disable folding"
+set confirm                           " prompt when existing from an unsaved file
+set backspace=indent,eol,start        " More powerful backspacing
+set t_Co=256                          " Explicitly tell vim that the terminal has 256 colors "
+" set mouse=a                           " use mouse in all modes
+set report=0                          " always report number of lines changed                "
+" set nowrap                            " dont wrap lines
+set scrolloff=5                       " 5 lines above/below cursor when scrolling
+" set number                            " show line numbers
 set hlsearch
-set showmatch                                                     " show matching bracket (briefly jump)
-set showcmd                                                       " show typed command in status bar
-set title                                                         " show file in titlebar
-set laststatus=2                                                  " use 2 lines for the status bar
-set matchtime=2                                                   " show matching bracket for 0.2 seconds
-set matchpairs+=<:>                                               " specially for html
+set showmatch                         " show matching bracket (briefly jump)
+set showcmd                           " show typed command in status bar
+set title                             " show file in titlebar
+set laststatus=2                      " use 2 lines for the status bar
+set matchtime=2                       " show matching bracket for 0.2 seconds
+set matchpairs+=<:>                   " specially for html
 " set relativenumber
 
 " Default Indentation
@@ -102,7 +103,8 @@ autocmd Syntax lisp,scheme,clojure,racket RainbowParenthesesToggle
 " tabbar
 let g:Tb_MaxSize = 2
 let g:Tb_TabWrap = 1
-map <leader-1> alt-1
+map <tab> :bn<cr>
+map <s-tab> :bp<cr>
 
 " easy-motion
 let g:EasyMotion_leader_key = '<Leader>'
@@ -139,12 +141,15 @@ if executable('coffeetags')
 endif
 
 " Nerd Tree
+" 启动时默认开启
+" autocmd VimEnter * NERDTree
 let NERDChristmasTree=0
 let NERDTreeWinSize=30
 let NERDTreeChDirMode=2
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$']
 " let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\~$']
 let NERDTreeShowBookmarks=1
+" 默认串口在左边
 let NERDTreeWinPos = "right"
 
 " nerdcommenter
@@ -156,7 +161,7 @@ let NERDCompactSexyComs=1
 let g:user_emmet_expandabbr_key='<C-j>'
 
 " powerline
-"let g:Powerline_symbols = 'fancy'
+" let g:Powerline_symbols = 'fancy'
 
 " NeoComplCache
 let g:neocomplcache_enable_at_startup=1
@@ -203,6 +208,8 @@ nmap <F4> :IndentGuidesToggle<cr>
 nnoremap <leader>a :Ack
 nnoremap <leader>v V`]
 nmap <leader>q :q<cr>
+" plugin vim-trailing-whitespace
+map <leader><space> :FixWhitespace<cr>
 
 "------------------
 " Useful Functions
@@ -212,6 +219,10 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
+
+" copy to system clipboard
+map "+y :w !pbcopy<CR><CR>
+map "+p :r !pbpaste<CR><CR>
 
 " When editing a file, always jump to the last cursor position
 autocmd BufReadPost *
