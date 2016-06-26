@@ -105,6 +105,7 @@ let g:Tb_MaxSize = 2
 let g:Tb_TabWrap = 1
 map <tab> :bn<cr>
 map <s-tab> :bp<cr>
+nmap <s-q> :bd<cr>
 
 " easy-motion
 let g:EasyMotion_leader_key = '<Leader>'
@@ -149,7 +150,7 @@ let NERDTreeChDirMode=2
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$']
 " let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\~$']
 let NERDTreeShowBookmarks=1
-" 默认串口在左边
+" 默认窗口在左边
 let NERDTreeWinPos = "right"
 
 " nerdcommenter
@@ -204,12 +205,13 @@ set pastetoggle=<F2>
 nmap <leader>t :TagbarToggle<cr>
 nmap <leader>f :NERDTreeToggle<cr>
 nmap <F3> :GundoToggle<cr>
-nmap <F4> :IndentGuidesToggle<cr>
 nnoremap <leader>a :Ack
 nnoremap <leader>v V`]
 nmap <leader>q :q<cr>
 " plugin vim-trailing-whitespace
-map <leader><space> :FixWhitespace<cr>
+" map <leader><space> :FixWhitespace<cr>
+" 垂直对齐线显示 默认<leader>ig
+let g:indent_guides_guide_size = 1
 
 "------------------
 " Useful Functions
@@ -219,10 +221,16 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
-
 " copy to system clipboard
 map "+y :w !pbcopy<CR><CR>
 map "+p :r !pbpaste<CR><CR>
+
+" ctags 
+ set tags+=./tags;tags
+" 正向遍历同名标签
+nmap <Leader>tn :tnext<CR>
+" 反向遍历同名标签
+nmap <Leader>tp :tprevious<CR>
 
 " When editing a file, always jump to the last cursor position
 autocmd BufReadPost *
@@ -235,16 +243,6 @@ autocmd BufReadPost *
 " w!! to sudo & write a file
 cmap w!! %!sudo tee >/dev/null %
 
-" Quickly edit/reload the vimrc file
-nmap <silent> <leader>ev :e $MYVIMRC<CR>
-nmap <silent> <leader>sv :so $MYVIMRC<CR>
-
-" sublime key bindings
-nmap <D-]> >>
-nmap <D-[> <<
-vmap <D-[> <gv
-vmap <D-]> >gv
-
 " eggcache vim
 nnoremap ; :
 :command W w
@@ -253,25 +251,3 @@ nnoremap ; :
 :command Q q
 :command Qa qa
 :command QA qa
-
-" for macvim
-if has("gui_running")
-    set go=aAce  " remove toolbar
-    "set transparency=30
-    set guifont=Monaco:h13
-    set showtabline=2
-    set columns=140
-    set lines=40
-    noremap <D-M-Left> :tabprevious<cr>
-    noremap <D-M-Right> :tabnext<cr>
-    map <D-1> 1gt
-    map <D-2> 2gt
-    map <D-3> 3gt
-    map <D-4> 4gt
-    map <D-5> 5gt
-    map <D-6> 6gt
-    map <D-7> 7gt
-    map <D-8> 8gt
-    map <D-9> 9gt
-    map <D-0> :tablast<CR>
-endif

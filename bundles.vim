@@ -12,9 +12,9 @@ Bundle 'gmarik/vundle'
 " Code Completions
 "------------------
 Bundle 'Shougo/neocomplcache'
+Bundle 'ervandew/supertab'
 Bundle 'mattn/emmet-vim'
 Bundle 'Raimondi/delimitMate'
-Bundle 'ervandew/supertab'
 " snippets
 Bundle 'garbas/vim-snipmate'
 Bundle 'honza/vim-snippets'
@@ -48,7 +48,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'scrooloose/syntastic'
-Bundle 'bronson/vim-trailing-whitespace'
+" Bundle 'bronson/vim-trailing-whitespace'
 
 "-------------
 " Other Utils
@@ -79,17 +79,11 @@ Bundle 'nono/jquery.vim'
 Bundle 'tpope/vim-markdown'
 " Bundle 'timcharper/textile.vim'
 
-"------- Ruby --------
-" Bundle 'tpope/vim-endwise'
-
 "------- Go ----------
 Bundle 'fatih/vim-go'
 
 "------- FPs ------
 Bundle 'kien/rainbow_parentheses.vim'
-" Bundle 'wlangstroth/vim-racket'
-" Bundle 'vim-scripts/VimClojure'
-" Bundle 'rosstimson/scala-vim-support'
 
 "--------------
 " Color Schemes
