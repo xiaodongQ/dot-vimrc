@@ -1,3 +1,25 @@
+*Vim config based on dot-vimrc,modified some features for myself(Thanks to humiaozuzu/dot-vimrc and Github)*
+
+new machine config steps：
+
+1. download project
+
+    `git clone https://github.com/xiaodongQ/dot-vimrc.git`
+
+2. prepare Vundle
+
+    `git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle`
+
+3. install plugins
+
+    `:BundleInstall`
+
+4. dependy on ack and ctags，(Mac OS X)
+
+    `brew install ack ctags               # OS X`
+    
+==================
+
 Maple's Vim config
 ==================
 
