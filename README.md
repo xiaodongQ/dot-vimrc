@@ -1,12 +1,12 @@
 *Vim config based on dot-vimrc,modified some features for myself(Thanks to humiaozuzu/dot-vimrc and Github)*
 
-new machine config steps：
+new machine quick config steps：
 
 1. download project
 
     `git clone https://github.com/xiaodongQ/dot-vimrc.git ~/.vim`
 
-     ln -s ~/.vim/vimrc ~/.vimrc
+    `ln -s ~/.vim/vimrc ~/.vimrc`
 
 2. prepare Vundle
 
