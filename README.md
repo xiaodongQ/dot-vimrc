@@ -4,7 +4,9 @@ new machine config steps：
 
 1. download project
 
-    `git clone https://github.com/xiaodongQ/dot-vimrc.git`
+    `git clone https://github.com/xiaodongQ/dot-vimrc.git ~/.vim`
+
+     ln -s ~/.vim/vimrc ~/.vimrc
 
 2. prepare Vundle
 

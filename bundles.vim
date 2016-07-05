@@ -13,6 +13,7 @@ Bundle 'gmarik/vundle'
 "------------------
 Bundle 'Shougo/neocomplcache'
 Bundle 'ervandew/supertab'
+" HTML代码简写
 Bundle 'mattn/emmet-vim'
 Bundle 'Raimondi/delimitMate'
 " snippets

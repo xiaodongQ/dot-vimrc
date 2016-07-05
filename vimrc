@@ -58,7 +58,7 @@ set softtabstop=4   " backspace
 set shiftwidth=4    " indent width
 " set textwidth=79
 " set smarttab
-set expandtab       " expand tab to space
+" set expandtab       " expand tab to space
 
 autocmd FileType php setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
@@ -103,9 +103,9 @@ autocmd Syntax lisp,scheme,clojure,racket RainbowParenthesesToggle
 " tabbar
 let g:Tb_MaxSize = 2
 let g:Tb_TabWrap = 1
-map <tab> :bn<cr>
-map <s-tab> :bp<cr>
-nmap <s-q> :bd<cr>
+nmap <tab> :bn<cr>
+nmap <s-tab> :bp<cr>
+nmap <s-q> :bd<cr><cr>
 
 " easy-motion
 let g:EasyMotion_leader_key = '<Leader>'
@@ -157,6 +157,12 @@ let NERDTreeWinPos = "right"
 let NERDSpaceDelims=1
 " nmap <D-/> :NERDComToggleComment<cr>
 let NERDCompactSexyComs=1
+
+" delimitMate
+" 符号补全后回车换行自动调整缩进
+let delimitMate_expand_cr = 2
+let delimitMate_matchpairs = "(:),[:],{:}"
+
 
 " ZenCoding
 let g:user_emmet_expandabbr_key='<C-j>'
@@ -213,6 +219,9 @@ nmap <leader>q :q<cr>
 " 垂直对齐线显示 默认<leader>ig
 let g:indent_guides_guide_size = 1
 
+" 插入模式下的换行并新建一行
+imap <c-g><Enter> <Esc>o
+
 "------------------
 " Useful Functions
 "------------------
@@ -228,9 +237,9 @@ map "+p :r !pbpaste<CR><CR>
 " ctags 
  set tags+=./tags;tags
 " 正向遍历同名标签
-nmap <Leader>tn :tnext<CR>
+nmap <Leader>gn :tnext<CR>
 " 反向遍历同名标签
-nmap <Leader>tp :tprevious<CR>
+nmap <Leader>gp :tprevious<CR>
 
 " When editing a file, always jump to the last cursor position
 autocmd BufReadPost *
