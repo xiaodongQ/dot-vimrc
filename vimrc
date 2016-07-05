@@ -180,10 +180,6 @@ let g:neocomplcache_min_syntax_length = 3
 let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 set completeopt-=preview
 
-imap <C-k> <Plug>(neocomplcache_snippets_force_expand)
-smap <C-k> <Plug>(neocomplcache_snippets_force_expand)
-imap <C-l> <Plug>(neocomplcache_snippets_force_jump)
-smap <C-l> <Plug>(neocomplcache_snippets_force_jump)
 
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
@@ -221,6 +217,8 @@ let g:indent_guides_guide_size = 1
 
 " 插入模式下的换行并新建一行
 imap <c-g><Enter> <Esc>o
+" 插入模式下直接跳转到行尾
+imap <c-l> <End>
 
 "------------------
 " Useful Functions
