@@ -1,4 +1,4 @@
-*Vim config based on dot-vimrc,modified some features for myself(Thanks to humiaozuzu/dot-vimrc and Github)*
+*Vim config(C/C++) based on dot-vimrc,modified some features for myself(Thanks to humiaozuzu/dot-vimrc and Github)*
 
 new machine quick config steps：
 
