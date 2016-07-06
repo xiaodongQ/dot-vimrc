@@ -26,6 +26,7 @@ Bundle 'tomtom/tlib_vim'
 "-----------------
 " Fast navigation
 "-----------------
+" 标签跳转html,xml
 Bundle 'edsono/vim-matchit'
 Bundle 'Lokaltog/vim-easymotion'
 
