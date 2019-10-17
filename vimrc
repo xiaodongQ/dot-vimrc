@@ -130,8 +130,8 @@ let g:neocomplcache_omni_patterns.erlang = '[a-zA-Z]\|:'
 let g:SuperTabDefaultCompletionType = '<C-X><C-U>'
 let g:SuperTabRetainCompletionType=2
 
-" SnipMate
-" imap <c-j> <Plug>snipMateTrigger
+" SnipMate 代码片段触发键ctrl+j, 输入main后按下则会补全定义好的代码段
+imap <c-j> <Plug>snipMateTrigger
 
 " ctrlp
 set wildignore+=*/tmp/*,*.so,*.o,*.a,*.obj,*.swp,*.zip,*.pyc,*.pyo,*.class,.DS_Store  " MacOSX/Linux
